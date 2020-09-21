@@ -61,6 +61,17 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            a.hover-effect{
+                border-radius: 5px;
+                padding: 10px;
+                transition: 400ms;
+            }
+
+            a.hover-effect:hover{
+                color: white;
+                background: #41399E;    
+            }
         </style>
     </head>
     <body>
@@ -68,12 +79,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a class="hover-effect" href="{{ url('/home') }}">Inicio</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a class="hover-effect" href="{{ route('login') }}">Iniciar Sesión</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a class="hover-effect" href="{{ route('register') }}">Registrarse</a>
                         @endif
                     @endauth
                 </div>

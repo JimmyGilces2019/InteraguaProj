@@ -21,6 +21,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/user', 'UsuarioController@index')->name('usuario.consultar');
+Route::get('/reports/repOne',function(){
+    return view('reports.repOne');
+});
 
 Route::get('login/{driver}','Auth\LoginController@redirectToProvider');
-Route::get('login/{driver}/callback','Auth\LoginController@handleProviderCallback'); 
+Route::get('login/{driver}/callback','Auth\LoginController@handleProviderCallback');
+
+
+Route::get('/imprimir','PDFController@PDFGenerate')->name('pdfGenerate');
+Route::get('/csvGenerate','PDFController@CSVGenerate')->name('csvGenerate');
